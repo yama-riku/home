@@ -1,0 +1,535 @@
+@charset "UTF-8";
+
+/*共通部分*/
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+
+*{
+    text-decoration:none;
+    list-style-type: none;
+    margin: 0;
+}
+
+
+/* モバイルファーストでcss作成 */
+/* スマホ表示 */
+header{
+    background-color:rgb(72, 109, 158);
+    width: 100%;
+    height:70px; 
+    position: fixed;
+    display:flex;
+    top:0;
+    left:0;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+header h1 {
+    margin-top:15px;
+    margin-left: 4%;
+    font-size:25px;
+    color: aliceblue;
+    font-family: 'Kiwi Maru', serif;
+}
+
+.menuicon {
+    display:block;
+    height: 70px;
+    width: 70px;
+    position: relative;
+    z-index: 4;
+}
+
+.menuicon div {
+    height: 1px;
+    width:60%;
+    background-color: aliceblue;
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition:.05s;
+}
+
+.menuicon div:nth-of-type(1){
+    transform: translate(-50%,-15px);
+}
+
+.menuicon div:nth-of-type(3){
+    transform: translate(-50%,15px);
+
+}
+
+.menuicon.active div:nth-of-type(1){
+    transform: rotate(45deg) translate(-50%,0);
+    transform-origin:0% 50% ;
+
+}
+
+.menuicon.active div:nth-of-type(2){
+    opacity:0;
+}
+
+.menuicon.active div:nth-of-type(3){
+    transform: rotate(-45deg) translate(-50%,0);
+    transform-origin:0% 50% ;
+
+}
+
+nav {
+    opacity:0;
+    visibility: hidden;
+    transition: .3s;
+    position: fixed;
+    top:0;
+    right:0;
+    background-color: rgba(240, 248, 255, 0.8);
+    z-index: 3;
+    width: 108px;
+    height: 300px;    
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+nav ul li {
+    margin-right:30px;
+}
+
+nav ul li:nth-of-type(1) {
+    padding-top:30px;
+}
+
+nav ul li:not(:first-of-type) {
+    margin-top:25px;
+}
+
+nav a{
+    color: black;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+nav.active {
+    opacity:1;
+    visibility:visible;
+
+}
+
+.header-menu a {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+
+/* メインコンテンツの内容 */
+
+main{
+    background-color:#eddcbc ;
+    min-height: calc(200vh - 130px);
+    margin-top: 70px;
+}
+
+.title {
+    height: calc(100vh - 70px);
+    position: relative;
+    border: 1px solid #eddcbc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lora', serif ;
+}
+
+.title h1 {
+    font-size: 3.5rem;
+    line-height: 5rem;
+    text-align: center;
+}
+
+@keyframes showText {
+    0%{
+      opacity:0;
+      transform: translateY(10px);
+    }
+    100%{
+      opacity:1;
+    }
+}
+
+.title1 span{
+    display:inline-block;
+    animation:showText 3s backwards;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.pc-title {
+    display: none;
+}
+
+/* subコンテンツ */
+.sub {
+    min-height: calc(100vh - 100px);
+    border: 1px solid #eddcbc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sub1 {
+    text-align: center;
+    font-family: 'Kiwi Maru', serif;
+}
+
+.sub1 img {
+    border-radius: 50%;
+    height: 125px;
+    width: 125px;
+}
+
+.sub h1 {
+    font-size:25px;
+    margin-top: 1.2rem;
+}
+
+.sub1 h2 {
+    font-size: 20px;
+}
+
+.pc-only {
+    display: none;
+}
+
+.sub p {
+    font-size: 15px;
+    text-align: center;
+    margin: 1.2rem 4%;
+    font-family: 'Kiwi Maru', serif;
+}
+
+.insta img {
+    margin-top: 0.5rem;
+    height: 50px;
+    width: 50px;
+}
+
+/* フッターの内容 */
+.footer {
+    height:35px;
+    background:#eddcbc;
+    text-align:center;
+    padding:10px 0;
+}
+
+.footer p{
+    color:#fff;
+}
+
+
+
+
+
+
+
+
+/* タブレット表示 */
+@media (min-width:768px){
+
+    header {
+        height: 80px;
+    }
+
+    .header1 h1{
+        font-size:2rem;
+    }
+
+    .menuicon {
+        height: 80px;
+        width: 80px;
+    }
+
+    nav{
+        width:200px;
+        height: 450px;
+    }
+
+    nav a {
+        font-size: 2rem;
+    }
+
+    nav ul li:not(:first-of-type) {
+        margin-top:50px;
+    }
+
+    /* メインコンテンツの内容 */
+    .title h1 {
+        font-size: 100px;
+        line-height: 2;
+        text-align: center;
+    }
+
+    sub {
+        background-color: rgba(240, 248, 255);
+    }
+
+    .sub1 img {
+        height: 230px;
+        width: 230px;
+    }
+    
+    .sub h1 {
+        font-size:50px;
+        margin-top: 1.2rem;
+    }
+    
+    .sub1 h2 {
+        font-size: 40px;
+    }
+    
+    .sub p {
+        font-size: 25px;
+        margin-top: 2rem;
+    }
+    
+    .insta img {
+        margin-top: 1rem;
+        height: 70px;
+        width: 70px;
+    }
+
+    
+    
+    
+}
+
+/* モバイル横向きの時のレスポンシブ */
+@media (min-width:800px) {
+    .title h1 {
+        font-size:50px;
+    }
+
+    .sub h1 {
+        margin-top:0.2rem;
+    }
+
+    .insta {
+        margin: 1px auto;
+    }
+
+    .insta img{
+        height: 40px;
+        width: 40px;
+    } 
+
+    
+}
+
+/* タブレット用 */
+@media (min-width:850px){
+
+    header {
+        height: 80px;
+    }
+
+    .menuicon {
+        height: 80px;
+        width: 80px;
+    }
+
+    nav{
+        width:200px;
+        height: 450px;
+    }
+
+    nav a {
+        font-size: 2rem;
+    }
+
+    nav ul li:not(:first-of-type) {
+        margin-top:50px;
+    }
+
+    /* メインコンテンツの内容 */
+    .title h1 {
+        font-size: 100px;
+        line-height: 2;
+        text-align: center;
+    }
+
+    sub {
+        background-color: rgba(240, 248, 255);
+    }
+
+    .sub1 img {
+        height: 230px;
+        width: 230px;
+    }
+    
+    .sub h1 {
+        font-size:50px;
+        margin-top: 1.2rem;
+    }
+    
+    .sub1 h2 {
+        font-size: 40px;
+    }
+    
+    .sub p {
+        font-size: 25px;
+        margin-top: 2rem;
+    }
+    
+    .insta img {
+        margin-top: 2rem;
+        height: 70px;
+        width: 70px;
+    }
+
+    
+    
+    
+}
+
+
+
+
+/* pc表示 */
+@media (min-width:1200px){
+
+    header{
+        height:100px;
+    }
+
+    .header1 h1{
+        font-size:2.5rem;
+    }
+
+    .menuicon {
+        display:none;
+    }
+
+    nav {
+        opacity:1;
+        visibility: visible;
+        transition: .3s;
+        position: fixed;
+        top:0;
+        right:0;
+        background-color:rgb(72, 109, 158) ;
+        z-index: 3;
+        width: auto;
+        height: 100px;            
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    nav ul li {
+        margin-left: 30px;
+    }
+
+    nav ul li:nth-of-type(1) {
+        padding-top:0;
+    }
+
+    nav ul li:not(:first-of-type) {
+        margin-top:0;
+    }
+ 
+
+    .header-menu a {
+        color:#eddcbc;
+        font-weight:bold;
+        text-decoration: none;
+        background:linear-gradient(rgb(240, 212, 175),rgb(240, 212, 175)) left bottom /100% 1px no-repeat;
+        transition: background-size .4s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    
+    .header-menu a:hover {
+        color:rgb(240, 212, 175);
+        background-position: right bottom;
+        background-size: 0 1px;
+    }
+
+    /* メインコンテンツの内容 */
+    main{
+        min-height: calc(100vh - 100px);
+        position: relative;
+    }
+
+    .title {
+        display: none;
+    }
+
+    
+
+    .pc-title {
+        display: unset;
+        font-family: 'Lora', serif ;   
+        border: 1px solid #eddcbc; 
+    }
+
+    .pc-title h1 {
+        margin-top: 90px;
+        font-size: 80px;
+        text-align: center;
+    }
+
+    .sub1 {
+        display: flex;
+        margin-top:30px;
+        
+    }
+
+    .sub img {
+        height: 150px;
+        width: 150px;
+    }
+
+    .super-sub {
+        margin-left: 30px;
+        line-height: 3.75rem;
+    }
+
+    .super-sub h1 {
+        font-size:2.25rem;
+    }
+
+    .super-sub h2 {
+        font-size: 1.75rem;
+    }
+
+    .sub p {
+        font-size: 1.25rem;
+    }
+
+    .insta img {
+        margin-top: 10px;
+        height: 50px;
+        width: 50px;
+    }
+
+    
+
+    
+
+
+
+}
+
+
