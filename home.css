@@ -314,6 +314,10 @@ main{
 
 /* モバイル横向きの時のレスポンシブ */
 @media (min-width:800px) {
+    header {
+        width: 100vh;
+    }
+
     .title h1 {
         font-size:50px;
     }
@@ -338,6 +342,7 @@ main{
 @media (min-width:850px){
 
     header {
+        width:100%;
         height: 80px;
     }
 
@@ -408,6 +413,8 @@ main{
 
     header{
         height:100px;
+        width: 100%;
+
     }
 
     .header1 h1{
