@@ -12,6 +12,11 @@
     margin: 0;
 }
 
+body  {
+    padding-left: calc(env(safe-area-inset-left) + .2em);
+    padding-right: calc(env(safe-area-inset-left) + .2rem);
+}
+
 
 /* モバイルファーストでcss作成 */
 /* スマホ表示 */
@@ -270,6 +275,8 @@ main{
     nav ul li:not(:first-of-type) {
         margin-top:50px;
     }
+    
+
 
     /* メインコンテンツの内容 */
     .title h1 {
