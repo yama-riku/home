@@ -12,10 +12,10 @@
     margin: 0;
 }
 
-body {
+/* body {
     padding-left: calc(env(safe-area-inset-left) + .2em);
     padding-right: calc(env(safe-area-inset-right) + .2em);
-}
+} */
 
 /* モバイルファーストでcss作成 */
 /* スマホ表示 */
@@ -29,6 +29,8 @@ header{
     left:0;
     justify-content: space-between;
     z-index: 1;
+    padding-left: calc(env(safe-area-inset-left) + .2em);
+    padding-right: calc(env(safe-area-inset-right) + .2em);
     
 
 }
@@ -141,6 +143,8 @@ main{
     background-color:#eddcbc ;
     min-height: calc(200vh - 130px);
     margin-top: 70px;
+    padding-left: calc(env(safe-area-inset-left) + .2em);
+    padding-right: calc(env(safe-area-inset-right) + .2em);
     
 
 }
@@ -237,6 +241,8 @@ main{
     background:#eddcbc;
     text-align:center;
     padding:10px 0;
+    padding-left: calc(env(safe-area-inset-left) + .2em);
+    padding-right: calc(env(safe-area-inset-right) + .2em);
     
 
 }
