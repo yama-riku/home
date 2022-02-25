@@ -12,7 +12,10 @@
     margin: 0;
 }
 
-
+body {
+    padding-left: calc(env(safe-area-inset-left) + .2em);
+    padding-left: calc(env(safe-area-inset-right) + .2em);
+}
 
 /* モバイルファーストでcss作成 */
 /* スマホ表示 */
